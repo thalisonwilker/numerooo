@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo de Adivinhação</title>
+    <title>Adivinhe a sequência</title>
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -36,11 +36,14 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>Jogo de Adivinhação</h1>
-        <input type="text" id="userInput" class="form-control mt-2" placeholder="Digite sua sugestão (ex: 1234)">
+        <h1>Adivinhe a sequência</h1>
+        <p>
+            Descubra a sequência secreta de 4 números
+        </p>
+        <input onkeydown="processaEnter()" type="text" id="userInput" class="form-control mt-2" placeholder="Digite sua sugestão (ex: 1234)">
         <button onclick="makeGuess()" class="btn btn-primary mt-2">Enviar</button>
-        <p id="feedback" class="mt-3"></p>
         <p id="finalMessage" class="mt-2"></p>
+        <p id="feedback" class="mt-3"></p>
         <ul id="guessList" class="mt-3"></ul>
     </div>
     <!-- Bootstrap JS, Popper.js, and jQuery CDN -->
@@ -90,7 +93,7 @@
                 } else if (valorSugestao !== valorNumeros) {
                     feedbackText += `${valorSugestao} está certo, mas na posição errada\n`;
                 } else {
-                    feedbackText += `${valorSugestao} está certo e na posição certa\n`;
+                    feedbackText += `${valorSugestao} está certo\n`;
                 }
             }
             return feedbackText;
@@ -101,6 +104,7 @@
             guessList.innerHTML = '';
             sugestoes.forEach(s => {
                 let li = document.createElement('li');
+                li.style.fontSize = 30
                 li.innerText = s.join('');
                 guessList.appendChild(li);
             });
