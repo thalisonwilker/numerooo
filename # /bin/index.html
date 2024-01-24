@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .game-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #userInput {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        #guessList {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Jogo de Adivinhação</h1>
+        <input type="text" id="userInput" class="form-control" placeholder="Digite sua sugestão (ex: 1234)">
+        <button onclick="makeGuess()" class="btn btn-primary mt-2">Enviar</button>
+        <p id="feedback" class="mt-2"></p>
+        <p id="finalMessage" class="mt-2"></p>
+        <ul id="guessList" class="mt-2"></ul>
+    </div>
+    <!-- Bootstrap JS, Popper.js, and jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Seu código JavaScript aqui
+    </script>
+</body>
+</html>
