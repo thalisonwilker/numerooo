@@ -46,11 +46,35 @@
         <p id="feedback" class="mt-3"></p>
         <ul id="guessList" class="mt-3"></ul>
     </div>
+    <input type="file" accept="image/*" id="fileInput" capture>
     <!-- Bootstrap JS, Popper.js, and jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        function checkCameraAccess() {
+            // Verifica se a API de mídia está disponível
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                alert("Acesso à câmera não disponível neste navegador.");
+                return;
+            }
+
+            // Tenta obter acesso à câmera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    // A câmera está disponível
+                    alert("Acesso à câmera concedido.");
+
+                    // Opicionalmente, aqui você pode implementar uma lógica para lidar com o stream da câmera
+                })
+                .catch(function(error) {
+                    // A câmera não está disponível ou o usuário negou o acesso
+                    alert("Acesso à câmera negado ou câmera indisponível.");
+                });
+        }
+
+        // Chama a função para verificar o acesso à câmera
+        checkCameraAccess();
         let numeros = Array.from({ length: 4 }, () => getRandomInt(0, 9));
         let tentativas = 0;
         let sugestoes = [];
