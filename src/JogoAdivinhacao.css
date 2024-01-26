@@ -1,0 +1,44 @@
+.game-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #guessList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #guessList li {
+    margin-top: 5px;
+  }
+
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input-item-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  .input-item-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+  }
+  
+  .input-item-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .input-item-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 500ms, transform 500ms;
+  }
