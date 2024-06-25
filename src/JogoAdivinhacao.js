@@ -163,9 +163,6 @@ const JogoAdivinhacao = () => {
           </ul>
         </div>
       </div>
-      {
-        JSON.stringify(numeros)
-      }
     </div>
   );
 };
